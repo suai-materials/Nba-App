@@ -1,0 +1,41 @@
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.exe
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.deps.json
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.runtimeconfig.json
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.dll
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.pdb
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.csproj.AssemblyReference.cache
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp_MarkupCompile.cache
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.g.resources
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.AssemblyInfoInputs.cache
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.AssemblyInfo.cs
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.csproj.CoreCompileInputs.cache
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.dll
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\refint\NbaApp.dll
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.pdb
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.genruntimeconfig.cache
+C:\Users\user\CLionProjects\abstracts-2\МДК 01.01 (C#)\NbaApp\NbaApp\obj\Debug\net6.0-windows\ref\NbaApp.dll
+C:\Users\user\Desktop\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.exe
+C:\Users\user\Desktop\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.deps.json
+C:\Users\user\Desktop\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.runtimeconfig.json
+C:\Users\user\Desktop\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.dll
+C:\Users\user\Desktop\NbaApp\NbaApp\bin\Debug\net6.0-windows\NbaApp.pdb
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\App.baml
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp_MarkupCompile.cache
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.g.resources
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.AssemblyInfo.cs
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.dll
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\refint\NbaApp.dll
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.pdb
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\NbaApp.genruntimeconfig.cache
+C:\Users\user\Desktop\NbaApp\NbaApp\obj\Debug\net6.0-windows\ref\NbaApp.dll

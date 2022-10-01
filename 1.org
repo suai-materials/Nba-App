@@ -1,0 +1,286 @@
+** Дополнительные задания на работу с файловой системой
+
+Задание 1(фрагмент модуля задания по компетенции Программные решения для бизнеса(2018 год)).Вы являетесь разработчиком в команде, которая занимается проектированием и разработкой настольных приложений, взаимодействующих с БД. Технические сложности пока не дают возможности работать с БД в полном объеме. Поэтому список фотографий для загрузки на форму необходимо брать из конкретной папки. Содержимое папки будет изменяться, поэтому не делайте «жесткой » привязки по полному пути к фото. Есть вероятность, что данная папка со временем будет иметь структуру подпапок. В этом случае поиск файлов необходимо делать во всех подпапках и формировать список загружаемых фото по результатам этого поиска. Вы разрабатываете модуль, в котором загрузка фото из папок на форме оформлена в виде слайдера- по 3 фото за 1 раз. Смена фото происходит по нажатию соответствующих кнопок. Макет формы представлен на рисунке 1. Алгоритм изменения изображений должен работать таким образом, чтобы учесть случай, когда количество фото не кратно 3. В этом случае,в последней группе из 2-х фото добавится самое первое фото в папке(сдвиг произойдет на 1 позицию) и т.д.
+
+[[file:1.png]]
+
+Для выполнения задания используйте папки с ресурсами – папку logo и папку Pictures.
+
+Код:
+
+Разметка:
+
+#+begin_src xml
+<Window x:Class="NbaApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        MinHeight="500" MinWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Source="res/logo/logo.jpg" />
+        <TextBlock FontSize="22" FontWeight="Medium" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Grid.Column="1">
+            NBA Management System
+        </TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="18" TextWrapping="Wrap"
+                   VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center">
+            Welcome  to use this NBA Management system, you can redirect to different pages according to your role by clicking the buttons bellow
+        </TextBlock>
+        <Button Grid.Column="1" VerticalAlignment="Top" Margin="30" Foreground="White" Grid.Row="2">
+            <TextBlock Margin="10">
+                <Run Foreground="White">
+                    Visitor
+                </Run>
+            </TextBlock>
+        </Button>
+        <Button Grid.Column="2" Margin="30" VerticalAlignment="Top" Foreground="White" Grid.Row="2">
+            <TextBlock Margin="10">
+                <Run Foreground="White">
+                    Admin
+                </Run>
+            </TextBlock>
+        </Button>
+
+        <Grid Margin="10" Grid.Row="3" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Margin="10, 0" Source="{Binding Img1}" />
+                <Image Margin="10, 0" Grid.Column="1" Source="{Binding Img2}" />
+                <Image Margin="10, 0" Grid.Column="2" Source="{Binding Img3}" />
+
+            </Grid>
+
+            <Button Click="Left" Width="48" Height="48">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="123" />
+                    </Style>
+                </Button.Resources>
+                <Image Source="res/ui/left.png" Margin="3" />
+            </Button>
+            <Button Click="Right" Width="48" Height="48" Grid.Column="3">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="123" />
+                    </Style>
+                </Button.Resources>
+                <Image Source="res/ui/right.png" Margin="3" />
+            </Button>
+        </Grid>
+        <TextBlock Background="#8b89a4" Foreground="White" HorizontalAlignment="Stretch" TextAlignment="Center"
+                   Grid.Row="4" Grid.ColumnSpan="4" FontSize="10">
+            The current season is 2016-2017, and the NBA already has a history of 71 years.
+        </TextBlock>
+    </Grid>
+</Window>
+#+end_src
+
+[[./2.png]]
+
+
+MainWindow.cs
+#+begin_src csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace NbaApp;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
+{
+    private Images _images = new();
+
+    public MainWindow()
+    {
+        DataContext = _images;
+        InitializeComponent();
+    }
+
+    private void Right(object sender, RoutedEventArgs e)
+    {
+        _images.Right();
+    }
+
+    private void Left(object sender, RoutedEventArgs e)
+    {
+        _images.Left();
+    }
+}
+#+end_src
+
+Images.cs
+#+begin_src csharp
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+namespace NbaApp;
+
+public class Images : ViewModel
+{
+    // Путь до картинок
+    private const string PATH = @"C:\Users\user\Desktop\NbaApp\NbaApp\res\";
+    private string[] _showedImages;
+
+    private int _index = 0;
+
+    // Получаем все картинки из подпапок, а также их фильтруем по *.jpg
+    private List<string> _images = Directory.EnumerateFiles(PATH, "*.jpg", SearchOption.AllDirectories).ToList();
+
+    // Параметры для binding
+    public string Img1
+    {
+        get => _showedImages[0];
+        set => _showedImages[0] = value;
+    }
+
+    public string Img2
+    {
+        get => _showedImages[1];
+        set => _showedImages[1] = value;
+    }
+
+    public string Img3
+    {
+        get => _showedImages[2];
+        set => _showedImages[2] = value;
+    }
+
+    public Images()
+    {
+        ShowImages();
+    }
+
+    // Функция отображения картинок по индексу
+    private void ShowImages()
+    {
+        if (_images.Count == 0)
+            return;
+
+        // Если у нас одна картинка просто зацикливаем одну картинку  и наплевать на индексы
+        if (_images.Count == 1)
+            _showedImages = new[] {_images[0], _images[0], _images[0]};
+        else if (_index + 3 >= _images.Count)
+        {
+            var list_ = _images.GetRange(_index, _images.Count - _index);
+            list_.AddRange(_images.GetRange(0, 3 - (_images.Count - _index)));
+            _showedImages = list_.ToArray();
+        }
+        else
+        {
+            _showedImages = _images.GetRange(_index, 3).ToArray();
+        }
+
+        // Уведомление WPF о измененения в этих Properties
+        NotifyPropertyChanged("Img1");
+        NotifyPropertyChanged("Img2");
+        NotifyPropertyChanged("Img3");
+    }
+
+    // Высчитываем новый индекс при листании вправо и меняем картинки
+    public void Right()
+    {
+        if (_images.Count == 0)
+            return;
+
+        // Если индекс превышает допустимое значение, получаем новый цикличный индекс, иначе просто листаем на 3
+        if (_index + 3 >= _images.Count)
+            _index = 3 - (_images.Count - _index);
+        else
+            _index += 3;
+        /* Cуществует ошибка если индекс меньше 3, то мы не получаем новый корректно(вычитание из тройки),
+         это исправляет ошибку*/
+        if (_images.Count < 3 && _index == _images.Count)
+            _index = 0;
+        ShowImages();
+    }
+
+    // Высчитываем новый индекс при листании влево и меняем картинки
+    public void Left()
+    {
+        if (_images.Count == 0)
+            return;
+        if (_index - 3 <= 0)
+            _index = Math.Abs(_images.Count + (_index - 3));
+        else
+            _index -= 3;
+        ShowImages();
+    }
+}
+#+end_src
+
+ViewModel.cs
+#+begin_src csharp
+using System.ComponentModel;
+
+namespace NbaApp;
+
+// Крутой класс для уведомления WPF, что Property изменилось
+public abstract class ViewModel : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected void NotifyPropertyChanged(string propertyName)
+    {
+        if (PropertyChanged != null)
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+#+end_src
+
+Демонстрация работы приложения:
+
+Картинки используемые в приложении:
+
+[[./3.png]]
+
+[[./4.png]]
+
+[[./5.png]]
+
+[[./6.png]]
+
+[[./7.png]]
+
+

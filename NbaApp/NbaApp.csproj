@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+    <ItemGroup>
+        <Resource Include="./res/logo/*.*">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="./res/Pictures1/*.*">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="./res/ui/*.*">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="res\test1\1.jpg" />
+        <Resource Include="res\test1\2.jpg" />
+        <Resource Include="res\test1\3.jpg" />
+        <Resource Include="res\test1\4.jpg" />
+        <Resource Include="res\test2\1.jpg" />
+        <Resource Include="res\test2\2.jpg" />
+        <Resource Include="res\test3\1.jpg" />
+        <Resource Include="res\test3\2.jpg" />
+        <Resource Include="res\test3\3.jpg" />
+        <Resource Include="res\test3\4.jpg" />
+        <Resource Include="res\test3\5.jpg" />
+        <Resource Include="res\test3\6.jpg" />
+        <Resource Include="res\test4\1.jpg" />
+        <Resource Include="res\test5\1.jpg" />
+        <Resource Include="res\test5\2.jpg" />
+        <Resource Include="res\test5\3.jpg" />
+        <Resource Include="res\test5\4.jpg" />
+        <Resource Include="res\test5\5.jpg" />
+    </ItemGroup>
+</Project>
